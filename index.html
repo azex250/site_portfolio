@@ -27,7 +27,8 @@
     <body data-ng-controller="general">
         <header>
             <img src="img/logo.png" id="header__logo" data-ng-click="openMainPage();" />
-            <div id="header__slide" ng-click="a=!a" ng-class="{shown: a}" data-ng-controller="slideController">
+            <div id="header__slide" data-ng-click="toggleSlider()" 
+                ng-class="{closed: config.is_closed}" data-ng-controller="slideController">
                 <nav id="header__menu">
                     <ul>
                         <li data-ng-repeat="item in config.top_menu">

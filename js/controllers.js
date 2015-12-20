@@ -16,8 +16,12 @@ angular.module("controllers",[])
 
 .controller("slideController", ["$scope", "menuManager", function($scope, menuManager) {
     $scope.config = {
-    	is_open: false,
+    	is_closed: false,
     	top_menu: menuManager.getTopMenu()
+    };
+
+    $scope.toggleSlider = function() {
+    	$scope.config.is_closed = !$scope.config.is_closed;
     };
 }])
 

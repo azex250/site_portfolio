@@ -3,8 +3,12 @@
     var width, height, largeHeader, canvas, ctx, circles, target, animateHeader = true;
 
     // Main
-    initHeader();
-    addListeners();
+    var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
+    if (!is_firefox) {
+        initHeader();
+        addListeners(); 
+    }
 
     function initHeader() {
         width = window.innerWidth;
@@ -22,7 +26,7 @@
 
         // create particles
         circles = [];
-        for(var x = 0; x < width*0.5; x++) {
+        for(var x = 0; x < width*0.1; ++x) {
             var c = new Circle();
             circles.push(c);
         }
@@ -30,10 +34,12 @@
     }
 
     // Event handling
+    /*
     function addListeners() {
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
     }
+    */
 
     function scrollCheck() {
         if(document.body.scrollTop > height) animateHeader = false;
@@ -43,7 +49,6 @@
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
-        largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
     }
@@ -66,7 +71,7 @@
         (function() {
             _this.pos = {};
             init();
-            console.log(_this);
+            //console.log(_this);
         })();
 
         function init() {

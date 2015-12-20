@@ -86,7 +86,7 @@ header {
   background: rgba(30, 80, 70, 0.4)
 }
 
-#header__slide.shown {
+#header__slide.closed {
   right: -30%;
 }
 
