@@ -1,17 +1,35 @@
 angular.module("controllers",[])
 
-.controller("title", ["$scope", "$location", function($scope, $location) {
+.controller("title", ["$scope", function($scope) {
+
+}])
+
+.controller("general", ["$scope", "$location", function($scope, $location) {
 	$scope.openMainPage = function() {
-		$location.patch('/');
+		$location.path('/');
 	}
+
 }])
 
-.controller("general", ["$scope", function($scope) {
-    
+.controller("mainController", ["$scope", "menuManager", function($scope, menuManager) {
+    $scope.$emit("bg_switch", 'main');
+	menuManager.setTopMenu('main');
+
 }])
 
-.controller("mainController", ["$scope", function($scope) {
-    
+.controller("priceController", ["$scope", "menuManager", function($scope, menuManager) {
+	$scope.$emit("bg_switch", 'price');
+	menuManager.setTopMenu('price');
+}])
+
+.controller("contactsController", ["$scope", "menuManager", function($scope, menuManager) {
+	$scope.$emit("bg_switch", 'contacts');
+	menuManager.setTopMenu('contacts');
+}])
+
+.controller("portfolioController", ["$scope", "menuManager", function($scope, menuManager) {
+	$scope.$emit("bg_switch", 'portfolio');
+	menuManager.setTopMenu('portfolio');
 }])
 
 .controller("slideController", ["$scope", "menuManager", function($scope, menuManager) {

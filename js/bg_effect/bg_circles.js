@@ -34,12 +34,11 @@
     }
 
     // Event handling
-    /*
+    
     function addListeners() {
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
     }
-    */
 
     function scrollCheck() {
         if(document.body.scrollTop > height) animateHeader = false;

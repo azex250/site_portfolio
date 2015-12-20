@@ -57,6 +57,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  transition: 1.5s;
 }
 
 a {
